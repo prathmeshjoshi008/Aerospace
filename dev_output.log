@@ -23,3 +23,8 @@
  GET /AERO/Aerodynamics/Incompressible-Flow/Thin-Airfoil-Theory 200 in 236ms (next.js: 25ms, generate-params: 21ms, application-code: 210ms)
  GET /AERO/Aerodynamics/Incompressible-Flow/Thin-Airfoil-Theory 200 in 216ms (next.js: 26ms, generate-params: 21ms, application-code: 190ms)
  GET /AERO/Aerodynamics/Incompressible-Flow/Thin-Airfoil-Theory 200 in 200ms (next.js: 30ms, generate-params: 25ms, application-code: 170ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.0.2:3001
+✓ Ready in 974ms
