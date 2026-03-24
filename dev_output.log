@@ -28,3 +28,6 @@
 - Local:         http://localhost:3001
 - Network:       http://192.168.0.2:3001
 ✓ Ready in 974ms
+
+ GET /AERO/Aerodynamics/Incompressible-Flow/Thin-Airfoil-Theory 200 in 2.7s (next.js: 1883ms, generate-params: 618ms, application-code: 842ms)
+ GET /AERO/Aerodynamics/Incompressible-Flow/Thin-Airfoil-Theory 200 in 209ms (next.js: 21ms, generate-params: 16ms, application-code: 188ms)
