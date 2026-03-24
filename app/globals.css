@@ -24,3 +24,104 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 2. Section Visual Separation */
+.markdown-body h2 {
+  position: relative;
+}
+
+/* This adds a line above H2s (except the first one) to separate sections */
+.markdown-body h2:not(:first-of-type) {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 2rem !important;
+  margin-top: 3rem !important;
+}
+
+/* 1. Section Heading Hierarchy */
+.markdown-body h2 {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #1e3a5f !important;
+  border-left: 3px solid #3b82f6 !important;
+  padding-left: 10px !important;
+  margin-top: 2rem !important;
+}
+
+.markdown-body h3 {
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: #1e40af !important;
+  margin-top: 1.5rem !important;
+}
+
+/* 2. Assumption Blocks (Numbered Lists) */
+.markdown-body ol {
+  list-style-type: decimal !important;
+  list-style-position: inside;
+  background-color: #f0f7ff !important;
+  border-left: 4px solid #3b82f6 !important;
+  border-radius: 6px !important;
+  padding: 16px 20px !important;
+  margin: 1.5rem 0 !important;
+}
+
+.markdown-body ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* 3. Equation Block Styling */
+.markdown-body {
+  counter-reset: equation;
+}
+
+.markdown-body .katex-display {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  margin: 1.5rem 0 !important;
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CSS Counter for Equation Labels */
+.markdown-body .katex-display::after {
+  counter-increment: equation;
+  content: "Eq. " counter(equation);
+  position: absolute;
+  right: 16px;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Copy LaTeX Icon (handled via JS for click, but styled here) */
+.katex-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  z-index: 10;
+}
+
+.katex-copy-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.markdown-body .katex-display:hover .katex-copy-btn {
+  opacity: 1;
+}
