@@ -35,6 +35,8 @@ Thin airfoil theory is a foundational concept in aerodynamics developed by Max M
 
 By placing a vortex sheet along the camber line of the airfoil, we can model the circulation that generates lift.
 
+![Diagram](/images/image.png)
+
 ### The Fundamental Equation
 
 The boundary condition requires that the flow must be tangent to the camber line. This gives us the fundamental equation of thin airfoil theory:
