@@ -1,16 +1,18 @@
 ---
-title: "Nomenclature"
+title: "Nomenclature of Airfoils"
 section: "AERO"
 subject: "Aerodynamics"
 topic: "Airfoils and Wings"
-difficulty: "Medium"
+difficulty: "Easy"
 isSpecial: false
 formulas:
-  - name: "Primary Governing Equation"
-    latex: "$$\text{LaTeX\_Formula\_Here}$$"
-    mnemonic: "Memory trick placeholder."
-    usage: "When to use this specific equation in GATE."
-  - name: "Secondary Relation"
+  - name: "NACA 4 Digit Series Airfoil"
+    latex: "$$\text{NACA ABXX}$$"
+    1st Digit A: max camber as % of chord
+    2nd digit B: Position of max camber in tenths of chord
+    3-4 digits XX: max thickness as percentage of chord
+    
+  - name: "NACA 5 Digit Series Airfoil"
     latex: "$$\text{Secondary\_LaTeX\_Here}$$"
     mnemonic: "Short phrase to remember the variables."
     usage: "Constraint or boundary condition info."
@@ -25,8 +27,14 @@ pyqs:
 
 # Nomenclature
 
-## 📌 Overview
- (Replace X with the specific engineering diagram name, e.g., 'Normal Shock Control Volume')
+## Overview
+
+The airfoil nomenclature is standard for naming airfoils. As each airfoil shape generates unique pressure distribution, hence there can be infinite number of airfoils. Hence it is required to identify which airfoil shapes are actually suitable for specific case. To communicate this chosen shape in simple words rather than tedious drawings, nomenclature system is required. There are several airfoil nomnclature systems used. The important one for GATE exam syllabus is NACA 4 digit, NACA 5 digit, NACA 6 digit series. By infering the digits in the airfoil number, we can plot the overall shape of airfoil, which eases the manufacturing. 
+
+## NACA 4 digit series airfoils
+
+Each digit in this 4 digits tell us about the shape of airfoil as follows.
+The first digit: It tells about the camber of the airfoil. Camber is the mean line between the 
 
 > **Quick Summary:** Provide a 2-line "Wikipedia-style" lead paragraph here to define the concept globally.
 
