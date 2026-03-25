@@ -14,8 +14,6 @@ interface ThreePaneWorkspaceProps {
     content: string;
     slug: string[];
     url: string;
-    previousTopic?: { title: string; url: string } | null;
-    nextTopic?: { title: string; url: string } | null;
   };
 }
 
@@ -49,12 +47,7 @@ export default function ThreePaneWorkspace({ treeData, pageData }: ThreePaneWork
           onToggleRight={() => setRightSidebarOpen(!rightSidebarOpen)}
         />
         <main className="flex-1 overflow-y-auto p-4 md:p-8">
-          <ContentWindow
-            content={pageData.content}
-            frontmatter={pageData.frontmatter}
-            previousTopic={pageData.previousTopic}
-            nextTopic={pageData.nextTopic}
-          />
+          <ContentWindow content={pageData.content} frontmatter={pageData.frontmatter} />
         </main>
       </div>
 

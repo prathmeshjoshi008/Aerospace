@@ -107,54 +107,11 @@ export function getFileContent(slug: string[]) {
 
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(fileContent);
-  const frontmatter = data as Frontmatter;
-
-  // Determine previous and next topics in the same folder
-  let previousTopic = null;
-  let nextTopic = null;
-
-  const dirPath = path.dirname(filePath);
-  if (fs.existsSync(dirPath)) {
-    const files = fs.readdirSync(dirPath)
-      .filter(f => f.endsWith('.md'))
-      .sort((a, b) => a.localeCompare(b));
-
-    const currentFilename = path.basename(filePath);
-    const currentIndex = files.indexOf(currentFilename);
-
-    if (currentIndex > 0) {
-      const prevFilePath = path.join(dirPath, files[currentIndex - 1]);
-      const prevContent = fs.readFileSync(prevFilePath, 'utf-8');
-      const { data: prevData } = matter(prevContent);
-      const prevFrontmatter = prevData as Frontmatter;
-      const prevRelativePath = path.relative(contentDir, prevFilePath);
-      const prevSlug = prevRelativePath.replace(/\.md$/, '').split(path.sep);
-      previousTopic = {
-        title: prevFrontmatter.title || files[currentIndex - 1].replace(/\.md$/, ''),
-        url: `/${prevSlug.join('/')}`
-      };
-    }
-
-    if (currentIndex >= 0 && currentIndex < files.length - 1) {
-      const nextFilePath = path.join(dirPath, files[currentIndex + 1]);
-      const nextContent = fs.readFileSync(nextFilePath, 'utf-8');
-      const { data: nextData } = matter(nextContent);
-      const nextFrontmatter = nextData as Frontmatter;
-      const nextRelativePath = path.relative(contentDir, nextFilePath);
-      const nextSlug = nextRelativePath.replace(/\.md$/, '').split(path.sep);
-      nextTopic = {
-        title: nextFrontmatter.title || files[currentIndex + 1].replace(/\.md$/, ''),
-        url: `/${nextSlug.join('/')}`
-      };
-    }
-  }
 
   return {
-    frontmatter,
+    frontmatter: data as Frontmatter,
     content,
     slug,
-    url: `/${slug.join('/')}`,
-    previousTopic,
-    nextTopic
+    url: `/${slug.join('/')}`
   };
 }
